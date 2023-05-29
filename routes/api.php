@@ -34,9 +34,10 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::post('/logout', [AuthController::class, 'logout']);
 });
     
-
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
-
-Route::get('/products', [ProductController::class, 'products']);
-Route::get('/products/{pid}', [ProductController::class, 'show']);
+Route::middleware(['https'])->group(function () {
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/login', [AuthController::class, 'login']);
+    
+    Route::get('/products', [ProductController::class, 'products']);
+    Route::get('/products/{pid}', [ProductController::class, 'show']);
+});
