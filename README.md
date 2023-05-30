@@ -1,4 +1,4 @@
-# Capstone - Go Shopper - Backend
+# Capstone - Go Shop! - Backend
 ---
 ## [Go Shop!](https://goshopfront.store/)
 
@@ -52,7 +52,8 @@
 
 ## BUGS | ISSUES
 ### Please list any bugs you encountered here.
-1. A bug is created that prevents user from adding the same item to the wishlist if it had been removed from the wishlist
+- [x] A bug is created that prevents user from adding the same item to the wishlist if it had been removed from the wishlist
+- [ ] A bug that prevents the user from removing item from Wishlist if the same item is also added to cart.
 
 ---
 
