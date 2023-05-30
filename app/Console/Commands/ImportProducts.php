@@ -33,12 +33,17 @@ class ImportProducts extends Command
             $products = $response->json();
 
             foreach ($products as $productData) {
-                Product::create([
-                    'title'=>$productData['title'],
-                    'description'=>$productData['description'],
-                    'price'=>$productData['price'],
-                    'image'=>$productData['image'],
-                ]);
+                $ratingData = $productData['rating'];
+                unset($productData['rating']);
+
+                $product = new Product();
+                $product->title = $productData['title'];
+                $product->category = $productData['category'];
+                $product->description = $productData['description'];
+                $product->price = $productData['price'];
+                $product->image = $productData['image'];
+                $product->rating = json_encode($ratingData);
+                $product->save();
             }
             
             $this->info('Products imported successfully!');
