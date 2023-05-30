@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('quantity')->default(1);
             $table->string('image')->nullable();
             $table->decimal('price', 8, 2)->default(0.0);
-            $table->boolean('is_wishlisted')->default(false);
+            $table->boolean('is_wishlisted')->nullable();
             $table->timestamps();
         });
     }

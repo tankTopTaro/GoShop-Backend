@@ -40,3 +40,5 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/products', [ProductController::class, 'products']);
 Route::get('/products/{pid}', [ProductController::class, 'show']);
 Route::get('/products/search/{query}', [ProductController::class, 'search']);
+Route::get('/products/category/{category}', [ProductController::class, 'category']);
+

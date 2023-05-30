@@ -175,13 +175,14 @@ class CartController extends Controller
         $carts = Cart::where('user_id', auth()->user()->id)->where('product_id', $productId)->first();
 
         if ($carts) {
-            if ($carts->is_wishlisted === false) {
+            if ($carts->is_wishlisted === null) {
                 $carts->is_wishlisted = true;
                 $carts->save();
             } else {
                 $carts->is_wishlisted = false;
-
-                $carts->delete();
+                if ($carts->quantity === 0) {
+                    $carts->delete();
+                }
             }
         }  else {
             $carts = new Cart();
