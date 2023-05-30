@@ -1,5 +1,6 @@
-# Mini Project 2 - Go Shopper - Backend
+# Capstone - Go Shopper - Backend
 ---
+## [Go Shop!](https://goshopfront.store/)
 
 ### [Fake Store API](https://fakestoreapi.com/)
 ### [Online Shop Website Template](https://drive.google.com/drive/folders/1kq7xfOW-v_mEF2T6ih_xw-hJyr9k1GnL)
